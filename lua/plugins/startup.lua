@@ -4,7 +4,7 @@ require("startup").setup({
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    vim.cmd("Startup display")  -- Abre o NvimTree automaticamente
+    vim.cmd("Startup display")  -- Abre o startup automaticamente
   end,
 })
 
