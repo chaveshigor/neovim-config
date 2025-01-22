@@ -28,3 +28,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+-- Fecha o buffer atual
+vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true })
