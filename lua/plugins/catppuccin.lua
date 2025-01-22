@@ -1,11 +1,16 @@
-require('catppuccin').setup({
-    flavour = "mocha",  -- Escolha o tema desejado
-    integrations = {
+return {
+  'catppuccin/nvim',
+  name = 'catppuccin',
+  --lazy = false,
+  priority = 1000,
+  config = function()
+    require('catppuccin').setup({
+      flavour = "mocha",
+      integrations = {
         telescope = true,
         nvimtree = true,
-    },
-})
-
--- Aplicar o tema Catppuccin
---vim.cmd.colorscheme("catppuccin")
+      },
+    })
+  end
+}
 
