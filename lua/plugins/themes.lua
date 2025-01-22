@@ -20,5 +20,8 @@ return {
         },
       })
     end
+  },
+  {
+    'tokyonight.nvim'
   }
 }
