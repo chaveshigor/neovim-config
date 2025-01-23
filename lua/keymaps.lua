@@ -35,3 +35,13 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = 
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldlevel = 99
+
+-- Mover na linha
+vim.api.nvim_set_keymap('n', '<S-Right>', '$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Right>', '$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-Right>', '$', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<S-Left>', '^', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Left>', '^', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-Left>', '^', { noremap = true, silent = true })
+
