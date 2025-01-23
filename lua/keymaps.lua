@@ -30,3 +30,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 -- Fecha o buffer atual
 vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true })
+
+-- Fold
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
