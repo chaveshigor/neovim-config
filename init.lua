@@ -12,6 +12,10 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Configura neovim para usar rbenv
+vim.env.PATH = '/home/beep/.rbenv/shims:' .. vim.env.PATH
+
+
 require("settings")
 require("keymaps")
 require("lazy").setup("plugins")
