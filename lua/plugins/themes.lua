@@ -3,7 +3,6 @@ return {
     'rebelot/kanagawa.nvim',
     config = function()
       require('kanagawa')
-      vim.cmd("colorscheme kanagawa-wave")
     end
   },
   { "Mofiqul/dracula.nvim" },
@@ -22,6 +21,10 @@ return {
     end
   },
   {
-    'tokyonight.nvim'
+    'folke/tokyonight.nvim',
+    config = function()
+      require('tokyonight')
+      vim.cmd("colorscheme tokyonight-night")
+    end
   }
 }
