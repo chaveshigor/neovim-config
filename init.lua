@@ -13,8 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Configura neovim para usar rbenv
-username = vim.fn.expand('$USER')
-vim.env.PATH = '/home/' .. username .. '/.rbenv/shims:' .. vim.env.PATH
+-- username = vim.fn.expand('$USER')
+-- vim.env.PATH = '/home/' .. username .. '/.rbenv/shims:' .. vim.env.PATH
+vim.env.PATH = vim.fn.expand('$HOME') .. '/.rbenv/shims:' .. vim.env.PATH
 
 require("settings")
 require("keymaps")

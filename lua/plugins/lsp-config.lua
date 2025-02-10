@@ -15,7 +15,8 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'ruby_lsp',
+          --'ruby_lsp',
+          'solargraph',
           'lua_ls',
           'ts_ls',
           'html',
@@ -41,8 +42,13 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-      lspconfig.ruby_lsp.setup({
-        capabilities = capabilities
+      -- lspconfig.ruby_lsp.setup({
+      --   capabilities = capabilities,
+      --   cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') }
+      -- })
+      lspconfig.solargraph.setup({
+        capabilities = capabilities,
+        cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') }
       })
       lspconfig.gopls.setup({
         capabilities = capabilities

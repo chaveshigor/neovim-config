@@ -11,7 +11,11 @@ return {
           '--with-filename',
           '--line-number',
           '--column',
-          '--smart-case'
+          '--smart-case',
+          '--no-ignore',
+          '--hidden',
+          '--glob',
+          '!.git/',
         },
         prompt_prefix = "> ",
         selection_caret = "> ",
