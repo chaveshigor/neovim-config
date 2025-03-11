@@ -45,3 +45,5 @@ vim.api.nvim_set_keymap('n', '<S-Left>', '^', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Left>', '^', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<S-Left>', '^', { noremap = true, silent = true })
 
+-- Git abrir PR
+vim.api.nvim_set_keymap('n', '<leader>pr', ":lua require('scripts.git').open_pr_from_commit()<CR>", { noremap = true, silent = true })
