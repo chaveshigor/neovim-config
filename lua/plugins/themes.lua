@@ -23,8 +23,9 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
+      vim.opt.termguicolors = true
       require('tokyonight')
-      vim.cmd("colorscheme tokyonight-night")
+      vim.cmd("colorscheme tokyonight-storm")
     end
   }
 }
