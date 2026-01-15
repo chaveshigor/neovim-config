@@ -1,21 +1,20 @@
+local servers = { "lua", "ruby", "python", "javascript", "go", "typescript", "tsx" }
 return {
   'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',  -- Atualiza automaticamente os parsers após a instalação
-  config = function()
-    require('nvim-treesitter.configs').setup {
-      ensure_installed = { "lua", "ruby", "python", "javascript", "go" },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
+  lazy = false,
+  build = ':TSUpdate',
+  configs = function()
+    require('nvim-treesitter/nvim-treesitter').install(servers)
+    require('nvim-treesitter/nvim-treesitter').setup {
+      install_dir = vim.fn.stdpath('data') .. '/ts_servers',
       indent = {
         enable = true,
       },
-      fold = {
-        enable = true
-      }
     }
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = servers,
+      callback = function() vim.treesitter.start() end,
+    })
   end
 }
-
-
