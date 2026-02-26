@@ -50,3 +50,10 @@ vim.keymap.set('n', '<C-Right>', '<C-w>l', { noremap = true, silent = true })
 
 -- LSP
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+
+-- Copy relative file path to clipboard
+vim.keymap.set("n", "<leader>cp", function()
+  local path = "./" .. vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+  vim.fn.setreg("+", path)
+  vim.notify("Copied: " .. path)
+end, { noremap = true, silent = true })
