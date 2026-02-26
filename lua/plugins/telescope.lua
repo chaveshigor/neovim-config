@@ -12,14 +12,16 @@ return {
 					"--line-number",
 					"--column",
 					"--smart-case",
-					"--hidden", -- ADICIONADO: busca conteúdo dentro de arquivos ocultos
+					"--hidden",
 					"--no-ignore",
-					"--glob",
-					"!**/.git/*",
-					"--glob",
-					"!**/node_modules/*",
-					"--glob",
-					"!**/vendor/*",
+					"--glob", "!**/.git/*",
+					"--glob", "!**/node_modules/*",
+					"--glob", "!**/vendor/*",
+					"--glob", "!**/.cache/*",
+					"--glob", "!**/.npm/*",
+					"--glob", "!**/.cargo/*",
+					"--glob", "!**/.rbenv/*",
+					"--glob", "!**/.local/share/*",
 				},
 				prompt_prefix = "> ",
 				selection_caret = "> ",
@@ -29,10 +31,17 @@ return {
 
 			pickers = {
 				find_files = {
-					-- Isso garante que o buscador de nomes de arquivos mostre os ocultos
 					hidden = true,
-					-- Opcional: não listar a pasta .git aqui também
-					find_command = { "rg", "--files", "--hidden", "--no-ignore", "--glob", "!**/.git/*", "--glob", "!**/node_modules/*", "--glob", "!**/vendor/*" },
+					find_command = { "rg", "--files", "--hidden", "--no-ignore",
+						"--glob", "!**/.git/*",
+						"--glob", "!**/node_modules/*",
+						"--glob", "!**/vendor/*",
+						"--glob", "!**/.cache/*",
+						"--glob", "!**/.npm/*",
+						"--glob", "!**/.cargo/*",
+						"--glob", "!**/.rbenv/*",
+						"--glob", "!**/.local/share/*",
+					},
 				},
 			},
 		})
